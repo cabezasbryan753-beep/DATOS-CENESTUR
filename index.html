@@ -118,7 +118,7 @@
     </style>
 </head>
 
-<body class="h-full flex flex-col font-sans text-slate-800 antialiased selection:bg-amber-100 selection:text-amber-900">
+<body class="h-full flex flex-col font-sans text-slate-800 antialiased selection:bg-amber-100 selection:text-amber-900 pb-20 md:pb-0 bg-slate-50">
 
     <!-- Splash Screen -->
     <div id="splash-screen" class="fixed inset-0 z-50 bg-slate-50 flex items-center justify-center transition-opacity duration-1000">
@@ -166,32 +166,25 @@
                         <i class="fa-solid fa-chart-pie"></i> Informe Consolidado
                     </button>
                 </nav>
-
-                <!-- Mobile menu toggle -->
-                <div class="md:hidden">
-                    <button onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white p-2">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
-                </div>
             </div>
         </div>
-
-        <!-- Mobile Nav Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 px-4 pt-2 pb-3 space-y-1">
-            <button onclick="switchTab('form'); toggleMobileMenu()"
-                class="w-full text-left px-3 py-2 rounded-full text-sm font-medium bg-amber-500 text-slate-950 flex items-center gap-2">
-                <i class="fa-solid fa-clipboard-list"></i> Nueva Ficha / Encuesta
-            </button>
-            <button onclick="switchTab('records'); toggleMobileMenu()"
-                class="w-full text-left px-3 py-2 rounded-full text-sm font-medium hover:bg-slate-800 text-slate-200 flex items-center gap-2">
-                <i class="fa-solid fa-address-book"></i> Fichas Registradas
-            </button>
-            <button onclick="switchTab('dashboard'); toggleMobileMenu()"
-                class="w-full text-left px-3 py-2 rounded-full text-sm font-medium hover:bg-slate-800 text-slate-200 flex items-center gap-2">
-                <i class="fa-solid fa-chart-pie"></i> Informe Consolidado
-            </button>
-        </div>
     </header>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 flex justify-around items-center p-2 pb-safe shadow-[0_-4px_15px_-3px_rgba(0,0,0,0.05)] z-50">
+        <button id="nav-form-btn-mobile" onclick="switchTab('form')" class="flex flex-col items-center justify-center w-full py-2 text-amber-600 transition-colors">
+            <i class="fa-solid fa-clipboard-list text-xl mb-1"></i>
+            <span class="text-[10px] font-bold">Ficha</span>
+        </button>
+        <button id="nav-records-btn-mobile" onclick="switchTab('records')" class="flex flex-col items-center justify-center w-full py-2 text-slate-400 hover:text-slate-600 transition-colors">
+            <i class="fa-solid fa-address-book text-xl mb-1"></i>
+            <span class="text-[10px] font-bold">Registros</span>
+        </button>
+        <button id="nav-dashboard-btn-mobile" onclick="switchTab('dashboard')" class="flex flex-col items-center justify-center w-full py-2 text-slate-400 hover:text-slate-600 transition-colors">
+            <i class="fa-solid fa-chart-pie text-xl mb-1"></i>
+            <span class="text-[10px] font-bold">Informe</span>
+        </button>
+    </nav>
 
     <!-- Main Container -->
     <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
@@ -1146,21 +1139,38 @@
             });
             document.getElementById(`tab-${tabName}`).classList.remove('hidden');
 
-            // Buttons state
+            // Desktop Buttons state
             const btnForm = document.getElementById('nav-form-btn');
             const btnRec = document.getElementById('nav-records-btn');
             const btnDash = document.getElementById('nav-dashboard-btn');
 
             [btnForm, btnRec, btnDash].forEach(b => {
-                b.className = 'px-3 py-2 rounded-full text-sm font-medium hover:bg-white/10 text-slate-200 transition-all flex items-center gap-2';
+                if (b) b.className = 'px-3 py-2 rounded-full text-sm font-medium hover:bg-white/10 text-slate-200 transition-all flex items-center gap-2';
             });
 
-            if (tabName === 'form') btnForm.className = 'px-3 py-2 rounded-full text-sm font-medium bg-amber-500 text-slate-950 shadow-sm transition-all flex items-center gap-2';
-            if (tabName === 'records') btnRec.className = 'px-3 py-2 rounded-full text-sm font-medium bg-amber-500 text-slate-950 shadow-sm transition-all flex items-center gap-2';
+            // Mobile Buttons state
+            const mBtnForm = document.getElementById('nav-form-btn-mobile');
+            const mBtnRec = document.getElementById('nav-records-btn-mobile');
+            const mBtnDash = document.getElementById('nav-dashboard-btn-mobile');
+
+            [mBtnForm, mBtnRec, mBtnDash].forEach(b => {
+                if (b) b.className = 'flex flex-col items-center justify-center w-full py-2 text-slate-400 hover:text-slate-600 transition-colors';
+            });
+
+            if (tabName === 'form') {
+                if(btnForm) btnForm.className = 'px-3 py-2 rounded-full text-sm font-medium bg-amber-500 text-slate-950 shadow-sm transition-all flex items-center gap-2';
+                if(mBtnForm) mBtnForm.className = 'flex flex-col items-center justify-center w-full py-2 text-amber-600 transition-colors';
+            }
+            if (tabName === 'records') {
+                if(btnRec) btnRec.className = 'px-3 py-2 rounded-full text-sm font-medium bg-amber-500 text-slate-950 shadow-sm transition-all flex items-center gap-2';
+                if(mBtnRec) mBtnRec.className = 'flex flex-col items-center justify-center w-full py-2 text-amber-600 transition-colors';
+            }
             if (tabName === 'dashboard') {
-                btnDash.className = 'px-3 py-2 rounded-full text-sm font-medium bg-amber-500 text-slate-950 shadow-sm transition-all flex items-center gap-2';
+                if(btnDash) btnDash.className = 'px-3 py-2 rounded-full text-sm font-medium bg-amber-500 text-slate-950 shadow-sm transition-all flex items-center gap-2';
+                if(mBtnDash) mBtnDash.className = 'flex flex-col items-center justify-center w-full py-2 text-amber-600 transition-colors';
                 updateDashboardMetrics();
             }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function toggleMobileMenu() {
