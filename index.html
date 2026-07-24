@@ -258,16 +258,10 @@
 
                 <!-- STEP 1: Datos Generales -->
                 <div id="step-1" class="space-y-6">
-                    <div class="border-b border-slate-200 pb-3 flex items-center justify-between">
-                        <div>
-                            <h2 class="text-lg font-bold text-slate-900"><i
-                                    class="fa-solid fa-store text-amber-500 mr-2"></i> Paso 1: Información General del
-                                Emprendimiento</h2>
-                            <p class="text-xs text-slate-500">Ubicación geográfica e identificación básica en la zona de
-                                Mitad del Mundo.</p>
-                        </div>
-                        <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-full font-semibold">San
-                            Antonio de Pichincha</span>
+                    <div class="border-b border-slate-200 pb-4 mb-4">
+                        <h2 class="text-xl sm:text-lg font-black text-slate-900 leading-tight mb-1"><i
+                                class="fa-solid fa-store text-amber-500 mr-2"></i> Paso 1: Información General del Emprendimiento</h2>
+                        <p class="text-sm sm:text-xs text-slate-500">Ubicación geográfica e identificación básica en la zona de Mitad del Mundo.</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -355,12 +349,10 @@
 
                 <!-- STEP 2: Diagnóstico Operativo y Administrativo -->
                 <div id="step-2" class="hidden space-y-6">
-                    <div class="border-b border-slate-200 pb-3">
-                        <h2 class="text-lg font-bold text-slate-900"><i
-                                class="fa-solid fa-gears text-amber-500 mr-2"></i> Paso 2: Diagnóstico de Procesos
-                            Administrativos, Costos y Operación</h2>
-                        <p class="text-xs text-slate-500">Evaluación cualitativa del control interno y financiero del
-                            negocio.</p>
+                    <div class="border-b border-slate-200 pb-4 mb-4">
+                        <h2 class="text-xl sm:text-lg font-black text-slate-900 leading-tight mb-1"><i
+                                class="fa-solid fa-gears text-amber-500 mr-2"></i> Paso 2: Diagnóstico de Procesos Administrativos, Costos y Operación</h2>
+                        <p class="text-sm sm:text-xs text-slate-500">Evaluación cualitativa del control interno y financiero del negocio.</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -468,12 +460,10 @@
 
                 <!-- STEP 3: Diagnóstico Comercial -->
                 <div id="step-3" class="hidden space-y-6">
-                    <div class="border-b border-slate-200 pb-3">
-                        <h2 class="text-lg font-bold text-slate-900"><i
-                                class="fa-solid fa-bullhorn text-amber-500 mr-2"></i> Paso 3: Diagnóstico Comercial y
-                            Presencia en Mercado</h2>
-                        <p class="text-xs text-slate-500">Evaluación de canales digitales, propuesta de valor y
-                            retención de clientes.</p>
+                    <div class="border-b border-slate-200 pb-4 mb-4">
+                        <h2 class="text-xl sm:text-lg font-black text-slate-900 leading-tight mb-1"><i
+                                class="fa-solid fa-bullhorn text-amber-500 mr-2"></i> Paso 3: Diagnóstico Comercial y Presencia en Mercado</h2>
+                        <p class="text-sm sm:text-xs text-slate-500">Evaluación de canales digitales, propuesta de valor y retención de clientes.</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -580,17 +570,14 @@
 
                 <!-- STEP 4: Evaluador de 15 Variables Cuantificables -->
                 <div id="step-4" class="hidden space-y-6">
-                    <div class="border-b border-slate-200 pb-3 flex items-center justify-between">
+                    <div class="border-b border-slate-200 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div>
-                            <h2 class="text-lg font-bold text-slate-900"><i
-                                    class="fa-solid fa-list-check text-amber-500 mr-2"></i> Paso 4: Ficha Estandarizada
-                                de 15 Variables Cuantificables</h2>
-                            <p class="text-xs text-slate-500">Califique de 1 (Deficiente / Inexistente) a 5 (Excelente /
-                                Optimizado) cada dimensión.</p>
+                            <h2 class="text-xl sm:text-lg font-black text-slate-900 leading-tight mb-1"><i class="fa-solid fa-list-check text-amber-500 mr-2"></i> Paso 4: Ficha Estandarizada de 15 Variables Cuantificables</h2>
+                            <p class="text-sm sm:text-xs text-slate-500">Califique de 1 (Deficiente / Inexistente) a 5 (Excelente / Optimizado) cada dimensión.</p>
                         </div>
-                        <div class="text-right">
-                            <span class="text-xs text-slate-500 block">Puntaje Total Actual</span>
-                            <span id="live-score" class="text-xl font-extrabold text-amber-600">15 / 75 pts</span>
+                        <div class="text-left sm:text-right bg-amber-50 p-4 sm:p-3 rounded-2xl sm:rounded-xl border border-amber-200 flex-shrink-0 shadow-inner">
+                            <span class="text-[11px] text-amber-800 font-bold block uppercase tracking-wider mb-1">Puntaje Total Actual</span>
+                            <span id="live-score" class="text-3xl sm:text-2xl font-black text-amber-600">15 <span class="text-sm font-bold text-amber-500/70">/ 75 pts</span></span>
                         </div>
                     </div>
 
@@ -1055,7 +1042,7 @@
                 document.getElementById(`step-${i}`).classList.add('hidden');
                 const ind = document.getElementById(`step-indicator-${i}`);
                 if (ind) {
-                    ind.className = 'flex items-center space-x-2 border-b-2 border-transparent pb-1 whitespace-nowrap text-slate-500';
+                    ind.className = 'flex items-center space-x-1.5 sm:space-x-2 border-b-2 border-transparent pb-1 whitespace-nowrap text-slate-500 snap-start shrink-0';
                     ind.querySelector('span:first-child').className = 'w-6 h-6 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-xs';
                 }
             });
@@ -1063,7 +1050,7 @@
             document.getElementById(`step-${stepNum}`).classList.remove('hidden');
             const activeInd = document.getElementById(`step-indicator-${stepNum}`);
             if (activeInd) {
-                activeInd.className = 'flex items-center space-x-2 text-amber-600 font-bold border-b-2 border-amber-500 pb-1 whitespace-nowrap';
+                activeInd.className = 'flex items-center space-x-1.5 sm:space-x-2 text-amber-600 font-bold border-b-2 border-amber-500 pb-1 whitespace-nowrap snap-start shrink-0';
                 activeInd.querySelector('span:first-child').className = 'w-6 h-6 rounded-full bg-amber-500 text-slate-900 flex items-center justify-center text-xs';
             }
             window.scrollTo({ top: 100, behavior: 'smooth' });
