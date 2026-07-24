@@ -1147,8 +1147,34 @@
             }
         }
 
+        // History State Tracking
+        let currentTab = 'form';
+        let currentStepNum = 1;
+
+        window.addEventListener('popstate', (e) => {
+            if (e.state) {
+                if (e.state.tab) {
+                    switchTab(e.state.tab, false);
+                }
+                if (e.state.step) {
+                    goToStep(e.state.step, false);
+                }
+                if (e.state.modal === 'open' && e.state.recordId) {
+                    showModal(e.state.recordId, false);
+                } else {
+                    closeModal(false);
+                }
+            }
+        });
+
+        // Set initial state on page load without adding to history stack
+        window.addEventListener('DOMContentLoaded', () => {
+            history.replaceState({ tab: 'form', step: 1, modal: 'closed' }, "", "");
+        });
+
         // Wizard step navigation
-        function goToStep(stepNum) {
+        function goToStep(stepNum, pushHistory = true) {
+            currentStepNum = stepNum;
             const stepTitles = {
                 1: "Datos del Negocio",
                 2: "Diagnóstico Operativo",
@@ -1177,6 +1203,10 @@
             if (progEl) progEl.style.width = (stepNum * 25) + '%';
 
             window.scrollTo({ top: 100, behavior: 'smooth' });
+
+            if (pushHistory) {
+                history.pushState({ tab: currentTab, step: currentStepNum, modal: 'closed' }, "", "");
+            }
         }
 
         // Submit handler
@@ -1252,7 +1282,8 @@
         }
 
         // Tab switching
-        function switchTab(tabName) {
+        function switchTab(tabName, pushHistory = true) {
+            currentTab = tabName;
             ['form', 'records', 'dashboard'].forEach(t => {
                 document.getElementById(`tab-${t}`).classList.add('hidden');
             });
@@ -1290,6 +1321,10 @@
                 updateDashboardMetrics();
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if (pushHistory) {
+                history.pushState({ tab: currentTab, step: currentStepNum, modal: 'closed' }, "", "");
+            }
         }
 
         function toggleMobileMenu() {
@@ -1383,7 +1418,7 @@
         }
 
         // Modal for Detail Ficha
-        function showModal(recordId) {
+        function showModal(recordId, pushHistory = true) {
             const item = records.find(r => r.id === recordId);
             if (!item) return;
 
@@ -1448,10 +1483,16 @@
             }
 
             document.getElementById('modal-detail').classList.remove('hidden');
+            if (pushHistory) {
+                history.pushState({ tab: currentTab, step: currentStepNum, modal: 'open', recordId: recordId }, "", "");
+            }
         }
 
-        function closeModal() {
+        function closeModal(pushHistory = true) {
             document.getElementById('modal-detail').classList.add('hidden');
+            if (pushHistory) {
+                history.pushState({ tab: currentTab, step: currentStepNum, modal: 'closed' }, "", "");
+            }
         }
 
         // Export to CSV
