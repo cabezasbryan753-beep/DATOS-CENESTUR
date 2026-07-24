@@ -215,36 +215,19 @@
             </div>
 
             <!-- Form Multi-Step Progress Indicator -->
-            <div class="bg-white p-3 sm:p-4 rounded-2xl shadow-md border border-slate-200 mb-2">
-                <div
-                    class="flex items-center text-[10px] sm:text-xs font-medium text-slate-500 overflow-x-auto scrollbar-hide pb-1 gap-3 sm:gap-4 snap-x">
-                    <button type="button" onclick="goToStep(1)" id="step-indicator-1"
-                        class="flex items-center space-x-1.5 sm:space-x-2 text-amber-600 font-bold border-b-2 border-amber-500 pb-1 whitespace-nowrap snap-start shrink-0">
-                        <span
-                            class="w-6 h-6 rounded-full bg-amber-500 text-slate-900 flex items-center justify-center text-xs">1</span>
-                        <span>1. Datos del Negocio</span>
-                    </button>
-                    <i class="fa-solid fa-chevron-right text-slate-300 text-xs shrink-0"></i>
-                    <button type="button" onclick="goToStep(2)" id="step-indicator-2"
-                        class="flex items-center space-x-1.5 sm:space-x-2 border-b-2 border-transparent pb-1 whitespace-nowrap snap-start shrink-0">
-                        <span
-                            class="w-6 h-6 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-xs">2</span>
-                        <span>2. Diagnóstico Operativo</span>
-                    </button>
-                    <i class="fa-solid fa-chevron-right text-slate-300 text-xs shrink-0"></i>
-                    <button type="button" onclick="goToStep(3)" id="step-indicator-3"
-                        class="flex items-center space-x-1.5 sm:space-x-2 border-b-2 border-transparent pb-1 whitespace-nowrap snap-start shrink-0">
-                        <span
-                            class="w-6 h-6 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-xs">3</span>
-                        <span>3. Diagnóstico Comercial</span>
-                    </button>
-                    <i class="fa-solid fa-chevron-right text-slate-300 text-xs shrink-0"></i>
-                    <button type="button" onclick="goToStep(4)" id="step-indicator-4"
-                        class="flex items-center space-x-1.5 sm:space-x-2 border-b-2 border-transparent pb-1 whitespace-nowrap snap-start shrink-0">
-                        <span
-                            class="w-6 h-6 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-xs">4</span>
-                        <span>4. 15 Variables (Scoring)</span>
-                    </button>
+            <div class="bg-white p-4 sm:p-5 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-200 mb-2">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3 sm:gap-4">
+                        <span id="current-step-number" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-amber-400 to-amber-500 text-slate-900 font-black flex items-center justify-center text-lg shadow-lg shadow-amber-500/30">1</span>
+                        <div>
+                            <span class="text-[10px] sm:text-xs text-slate-500 font-bold uppercase tracking-widest block mb-0.5">Paso <span id="current-step-idx">1</span> de 4</span>
+                            <span id="current-step-title" class="text-sm sm:text-base font-black text-slate-800">Datos Generales</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Progress bar -->
+                <div class="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden">
+                    <div id="current-step-progress" class="bg-gradient-to-r from-amber-400 to-amber-500 h-full rounded-full transition-all duration-700 ease-out" style="width: 25%"></div>
                 </div>
             </div>
 
@@ -1034,21 +1017,31 @@
 
         // Wizard step navigation
         function goToStep(stepNum) {
+            const stepTitles = {
+                1: "Datos del Negocio",
+                2: "Diagnóstico Operativo",
+                3: "Diagnóstico Comercial",
+                4: "Ficha 15 Variables"
+            };
+
             [1, 2, 3, 4].forEach(i => {
-                document.getElementById(`step-${i}`).classList.add('hidden');
-                const ind = document.getElementById(`step-indicator-${i}`);
-                if (ind) {
-                    ind.className = 'flex items-center space-x-1.5 sm:space-x-2 border-b-2 border-transparent pb-1 whitespace-nowrap text-slate-500 snap-start shrink-0';
-                    ind.querySelector('span:first-child').className = 'w-6 h-6 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-xs';
-                }
+                const stepEl = document.getElementById(`step-${i}`);
+                if (stepEl) stepEl.classList.add('hidden');
             });
 
-            document.getElementById(`step-${stepNum}`).classList.remove('hidden');
-            const activeInd = document.getElementById(`step-indicator-${stepNum}`);
-            if (activeInd) {
-                activeInd.className = 'flex items-center space-x-1.5 sm:space-x-2 text-amber-600 font-bold border-b-2 border-amber-500 pb-1 whitespace-nowrap snap-start shrink-0';
-                activeInd.querySelector('span:first-child').className = 'w-6 h-6 rounded-full bg-amber-500 text-slate-900 flex items-center justify-center text-xs';
-            }
+            const activeStep = document.getElementById(`step-${stepNum}`);
+            if (activeStep) activeStep.classList.remove('hidden');
+
+            const numEl = document.getElementById('current-step-number');
+            const idxEl = document.getElementById('current-step-idx');
+            const titleEl = document.getElementById('current-step-title');
+            const progEl = document.getElementById('current-step-progress');
+
+            if (numEl) numEl.innerText = stepNum;
+            if (idxEl) idxEl.innerText = stepNum;
+            if (titleEl) titleEl.innerText = stepTitles[stepNum];
+            if (progEl) progEl.style.width = (stepNum * 25) + '%';
+
             window.scrollTo({ top: 100, behavior: 'smooth' });
         }
 
