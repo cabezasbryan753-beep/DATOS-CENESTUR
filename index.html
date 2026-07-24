@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="h-full bg-slate-50">
+<html lang="es" class="bg-slate-50 scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -118,7 +118,7 @@
     </style>
 </head>
 
-<body class="h-full flex flex-col font-sans text-slate-800 antialiased selection:bg-amber-100 selection:text-amber-900 pb-20 md:pb-0 bg-slate-50">
+<body class="min-h-screen flex flex-col font-sans text-slate-800 antialiased selection:bg-amber-100 selection:text-amber-900 pb-28 md:pb-8 bg-slate-50">
 
     <!-- Splash Screen -->
     <div id="splash-screen" class="fixed inset-0 z-50 bg-slate-50 flex items-center justify-center transition-opacity duration-1000">
@@ -364,7 +364,7 @@
                             <label class="block text-xs font-bold text-slate-900">¿Cómo lleva el registro de sus
                                 ingresos y gastos diarios?</label>
                             <select id="admin-records"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm outline-none appearance-none focus:ring-2 focus:ring-amber-500">
+                                class="w-full px-4 py-3 bg-white border border-slate-200 rounded-2xl text-base sm:text-sm outline-none appearance-none focus:ring-2 focus:ring-amber-500 shadow-sm transition-all">
                                 <option value="1">No lleva ningún registro (solo memoria)</option>
                                 <option value="2">Anota de forma informal en libreta/cuaderno</option>
                                 <option value="3">Utiliza hojas de cálculo simples (Excel/Google Sheets)</option>
@@ -374,7 +374,7 @@
                             <label class="block text-xs font-bold text-slate-900 pt-2">Formalización Legal y RUC /
                                 RIMPE:</label>
                             <select id="admin-legal"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm outline-none appearance-none focus:ring-2 focus:ring-amber-500">
+                                class="w-full px-4 py-3 bg-white border border-slate-200 rounded-2xl text-base sm:text-sm outline-none appearance-none focus:ring-2 focus:ring-amber-500 shadow-sm transition-all">
                                 <option value="1">Sin RUC / Informal</option>
                                 <option value="2">RUC / RIMPE Negocio Popular (En trámite o activo)</option>
                                 <option value="3">RIMPE Emprendedor formalizado</option>
@@ -390,7 +390,7 @@
                             <label class="block text-xs font-bold text-slate-900">¿Conoce exactamente el costo unitario
                                 de sus productos/servicios?</label>
                             <select id="cost-structure"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm outline-none appearance-none focus:ring-2 focus:ring-amber-500">
+                                class="w-full px-4 py-3 bg-white border border-slate-200 rounded-2xl text-base sm:text-sm outline-none appearance-none focus:ring-2 focus:ring-amber-500 shadow-sm transition-all">
                                 <option value="1">No, calcula a ojo o intuición</option>
                                 <option value="2">Sabe el costo del insumo directo, pero ignora mano de obra o servicios
                                 </option>
@@ -403,7 +403,7 @@
                             <label class="block text-xs font-bold text-slate-900 pt-2">Asignación de Sueldo del
                                 Emprendedor:</label>
                             <select id="salary-allocation"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm outline-none appearance-none focus:ring-2 focus:ring-amber-500">
+                                class="w-full px-4 py-3 bg-white border border-slate-200 rounded-2xl text-base sm:text-sm outline-none appearance-none focus:ring-2 focus:ring-amber-500 shadow-sm transition-all">
                                 <option value="1">Toma dinero de la caja según va necesitando para uso personal</option>
                                 <option value="2">Intenta fijarse un valor pero casi nunca lo cumple</option>
                                 <option value="3">Tiene definido un sueldo fijo mensual dentro de los costos</option>
@@ -418,7 +418,7 @@
                             <label class="block text-xs font-bold text-slate-900">¿Cómo establece los precios de sus
                                 productos o servicios?</label>
                             <select id="pricing-method"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm outline-none appearance-none focus:ring-2 focus:ring-amber-500">
+                                class="w-full px-4 py-3 bg-white border border-slate-200 rounded-2xl text-base sm:text-sm outline-none appearance-none focus:ring-2 focus:ring-amber-500 shadow-sm transition-all">
                                 <option value="1">Copia exactamente los precios de la competencia vecina</option>
                                 <option value="2">Suma un porcentaje fijo básico al precio del insumo</option>
                                 <option value="3">Calcula costos totales + margen deseado + estudio de mercado local
@@ -436,7 +436,7 @@
                             <label class="block text-xs font-bold text-slate-900">¿Cómo maneja la existencia de materia
                                 prima, insumos o stock?</label>
                             <select id="operations-control"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm outline-none appearance-none focus:ring-2 focus:ring-amber-500">
+                                class="w-full px-4 py-3 bg-white border border-slate-200 rounded-2xl text-base sm:text-sm outline-none appearance-none focus:ring-2 focus:ring-amber-500 shadow-sm transition-all">
                                 <option value="1">Compra cuando se termina el stock sobre la marcha</option>
                                 <option value="2">Revisa visualmente antes del fin de semana o feriado</option>
                                 <option value="3">Lleva registro de entradas/salidas con stock mínimo programado
@@ -514,7 +514,7 @@
                                 otros locales en la Mitad del Mundo?</label>
                             <textarea id="value-prop-text" rows="3"
                                 placeholder="Ej. Elaborado con materia prima local orgánica, empaque ecológico y atención personalizada con relato histórico equinoccial."
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm outline-none focus:ring-2 focus:ring-amber-500 transition-all"></textarea>
+                                class="w-full px-4 py-3 bg-white border border-slate-200 rounded-2xl text-base sm:text-sm outline-none focus:ring-2 focus:ring-amber-500 shadow-sm transition-all"></textarea>
                         </div>
 
                         <!-- Customer Segmentation -->
@@ -525,7 +525,7 @@
                             <label class="block text-xs font-bold text-slate-900">¿Quién es su cliente recurrente
                                 principal?</label>
                             <select id="customer-segment"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm outline-none appearance-none focus:ring-2 focus:ring-amber-500">
+                                class="w-full px-4 py-3 bg-white border border-slate-200 rounded-2xl text-base sm:text-sm outline-none appearance-none focus:ring-2 focus:ring-amber-500 shadow-sm transition-all">
                                 <option value="Turista Nacional (Quito / Otras Provincias)">Turista Nacional (Quito /
                                     Otras Provincias)</option>
                                 <option value="Turista Internacional">Turista Internacional</option>
@@ -546,7 +546,7 @@
                             <label class="block text-xs font-bold text-slate-900">¿Mide el ticket promedio de compra o
                                 la afluencia de clientes?</label>
                             <select id="metrics-tracking"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm outline-none appearance-none focus:ring-2 focus:ring-amber-500">
+                                class="w-full px-4 py-3 bg-white border border-slate-200 rounded-2xl text-base sm:text-sm outline-none appearance-none focus:ring-2 focus:ring-amber-500 shadow-sm transition-all">
                                 <option value="1">No mide nada, solo ve el total al cerrar la caja al final del día
                                 </option>
                                 <option value="2">Sabe cuáles son sus 2 productos más vendidos pero sin cifra exacta
@@ -1045,7 +1045,7 @@
                 document.getElementById(`step-${i}`).classList.add('hidden');
                 const ind = document.getElementById(`step-indicator-${i}`);
                 if (ind) {
-                    ind.className = 'flex items-center space-x-2 border-b-2 border-transparent pb-1 whitespace-nowrap text-slate-500';
+                    ind.className = 'flex items-center space-x-1.5 sm:space-x-2 border-b-2 border-transparent pb-1 whitespace-nowrap text-slate-500 snap-start shrink-0';
                     ind.querySelector('span:first-child').className = 'w-6 h-6 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-xs';
                 }
             });
@@ -1053,7 +1053,7 @@
             document.getElementById(`step-${stepNum}`).classList.remove('hidden');
             const activeInd = document.getElementById(`step-indicator-${stepNum}`);
             if (activeInd) {
-                activeInd.className = 'flex items-center space-x-2 text-amber-600 font-bold border-b-2 border-amber-500 pb-1 whitespace-nowrap';
+                activeInd.className = 'flex items-center space-x-1.5 sm:space-x-2 text-amber-600 font-bold border-b-2 border-amber-500 pb-1 whitespace-nowrap snap-start shrink-0';
                 activeInd.querySelector('span:first-child').className = 'w-6 h-6 rounded-full bg-amber-500 text-slate-900 flex items-center justify-center text-xs';
             }
             window.scrollTo({ top: 100, behavior: 'smooth' });
