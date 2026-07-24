@@ -630,8 +630,7 @@
                         <!-- Dynamic JS generation of 15 variables for cleanliness -->
                     </div>
 
-                    <div
-                        class="flex flex-col sm:flex-row justify-end pt-5 mt-6 gap-3 border-t border-slate-100">
+                    <div class="flex flex-col sm:flex-row justify-end pt-5 mt-6 gap-3 border-t border-slate-100">
                         <button type="submit"
                             class="w-full sm:w-auto px-6 py-4 sm:py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-2xl text-base sm:text-sm shadow-lg shadow-emerald-500/30 transition-all duration-200 flex items-center justify-center gap-2">
                             <i class="fa-solid fa-check"></i> <span>Finalizar y Guardar Ficha</span>
@@ -1532,21 +1531,24 @@
         }
 
         function initCharts() {
-            // Radar Chart Initialization
+            // Polar Area Chart Initialization (replacing Radar)
             const ctxRadar = document.getElementById('radarChart').getContext('2d');
             radarChartInstance = new Chart(ctxRadar, {
-                type: 'radar',
+                type: 'polarArea',
                 data: {
                     labels: QUANTIFIABLE_VARIABLES.map(v => v.name.split('.')[1] || v.name),
                     datasets: [{
                         label: 'Promedio Mitad del Mundo',
                         data: Array(15).fill(1),
-                        backgroundColor: 'rgba(245, 158, 11, 0.2)',
-                        borderColor: '#d97706',
-                        pointBackgroundColor: '#b45309',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: '#b45309'
+                        backgroundColor: [
+                            'rgba(245, 158, 11, 0.75)', 'rgba(16, 185, 129, 0.75)', 'rgba(59, 130, 246, 0.75)',
+                            'rgba(139, 92, 246, 0.75)', 'rgba(236, 72, 153, 0.75)', 'rgba(239, 68, 68, 0.75)',
+                            'rgba(234, 179, 8, 0.75)', 'rgba(132, 204, 22, 0.75)', 'rgba(20, 184, 166, 0.75)',
+                            'rgba(6, 182, 212, 0.75)', 'rgba(14, 165, 233, 0.75)', 'rgba(99, 102, 241, 0.75)',
+                            'rgba(168, 85, 247, 0.75)', 'rgba(217, 70, 239, 0.75)', 'rgba(244, 63, 94, 0.75)'
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#ffffff',
                     }]
                 },
                 options: {
@@ -1554,15 +1556,19 @@
                     maintainAspectRatio: false,
                     scales: {
                         r: {
-                            angleLines: { color: '#e2e8f0' },
-                            grid: { color: '#f1f5f9' },
-                            suggestedMin: 1,
-                            suggestedMax: 5,
-                            ticks: { stepSize: 1, backdropColor: 'transparent' }
+                            min: 0,
+                            max: 5,
+                            ticks: { stepSize: 1, display: false },
+                            grid: { color: '#e2e8f0', circular: true },
+                            angleLines: { color: '#f1f5f9' }
                         }
                     },
                     plugins: {
                         legend: { display: false }
+                    },
+                    animation: {
+                        animateRotate: true,
+                        animateScale: true
                     }
                 }
             });
