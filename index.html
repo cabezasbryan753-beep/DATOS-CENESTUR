@@ -262,7 +262,7 @@
                             <label class="block text-xs font-bold text-slate-700 mb-1">Sector o Rubro de Actividad
                                 *</label>
                             <select id="business-sector" required
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none">
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none">
                                 <option value="">Seleccione sector...</option>
                                 <option value="Gastronomía y Alimentación">Gastronomía y Alimentación (Helados, Comida
                                     Típica, Cafés)</option>
@@ -284,7 +284,7 @@
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Ubicación / Sector en Mitad
                                 del Mundo *</label>
                             <select id="location-zone" required
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none">
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none">
                                 <option value="">Seleccione sector local...</option>
                                 <option value="Entorno Complejo Ciudad Mitad del Mundo">Entorno Complejo Ciudad Mitad
                                     del Mundo</option>
@@ -309,7 +309,8 @@
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Años de Funcionamiento del
                                 Negocio *</label>
                             <select id="years-operating" required
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none">
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none">
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. Menos de 1 año (Idea / Inicio)</option>
                                 <option value="Menos de 1 año">Menos de 1 año (Idea / Inicio)</option>
                                 <option value="1 a 3 años">1 a 3 años (En Crecimiento)</option>
                                 <option value="3 a 5 años">3 a 5 años (En Consolidación)</option>
@@ -343,7 +344,8 @@
                             <label class="block text-xs font-bold text-slate-900">¿Cómo lleva el registro de sus
                                 ingresos y gastos diarios?</label>
                             <select id="admin-records"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none">
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none" required>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. No lleva ningún registro (solo memoria)</option>
                                 <option value="1">No lleva ningún registro (solo memoria)</option>
                                 <option value="2">Anota de forma informal en libreta/cuaderno</option>
                                 <option value="3">Utiliza hojas de cálculo simples (Excel/Google Sheets)</option>
@@ -353,7 +355,8 @@
                             <label class="block text-xs font-bold text-slate-900 pt-2">Formalización Legal y RUC /
                                 RIMPE:</label>
                             <select id="admin-legal"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none">
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none" required>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. Sin RUC / Informal</option>
                                 <option value="1">Sin RUC / Informal</option>
                                 <option value="2">RUC / RIMPE Negocio Popular (En trámite o activo)</option>
                                 <option value="3">RIMPE Emprendedor formalizado</option>
@@ -369,7 +372,8 @@
                             <label class="block text-xs font-bold text-slate-900">¿Conoce exactamente el costo unitario
                                 de sus productos/servicios?</label>
                             <select id="cost-structure"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none">
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none" required>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. No, calcula a ojo o intuición</option>
                                 <option value="1">No, calcula a ojo o intuición</option>
                                 <option value="2">Sabe el costo del insumo directo, pero ignora mano de obra o servicios
                                 </option>
@@ -382,7 +386,8 @@
                             <label class="block text-xs font-bold text-slate-900 pt-2">Asignación de Sueldo del
                                 Emprendedor:</label>
                             <select id="salary-allocation"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none">
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none" required>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. Toma dinero de la caja según va necesitando para uso personal</option>
                                 <option value="1">Toma dinero de la caja según va necesitando para uso personal</option>
                                 <option value="2">Intenta fijarse un valor pero casi nunca lo cumple</option>
                                 <option value="3">Tiene definido un sueldo fijo mensual dentro de los costos</option>
@@ -397,7 +402,8 @@
                             <label class="block text-xs font-bold text-slate-900">¿Cómo establece los precios de sus
                                 productos o servicios?</label>
                             <select id="pricing-method"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none">
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none" required>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. Copia exactamente los precios de la competencia vecina</option>
                                 <option value="1">Copia exactamente los precios de la competencia vecina</option>
                                 <option value="2">Suma un porcentaje fijo básico al precio del insumo</option>
                                 <option value="3">Calcula costos totales + margen deseado + estudio de mercado local
@@ -415,7 +421,8 @@
                             <label class="block text-xs font-bold text-slate-900">¿Cómo maneja la existencia de materia
                                 prima, insumos o stock?</label>
                             <select id="operations-control"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none">
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none" required>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. Compra cuando se termina el stock sobre la marcha</option>
                                 <option value="1">Compra cuando se termina el stock sobre la marcha</option>
                                 <option value="2">Revisa visualmente antes del fin de semana o feriado</option>
                                 <option value="3">Lleva registro de entradas/salidas con stock mínimo programado
@@ -502,7 +509,9 @@
                             <label class="block text-xs font-bold text-slate-900">¿Quién es su cliente recurrente
                                 principal?</label>
                             <select id="customer-segment"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none">
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none" required>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. Turista Nacional (Quito /
+                                    Otras Provincias)</option>
                                 <option value="Turista Nacional (Quito / Otras Provincias)">Turista Nacional (Quito /
                                     Otras Provincias)</option>
                                 <option value="Turista Internacional">Turista Internacional</option>
@@ -523,7 +532,8 @@
                             <label class="block text-xs font-bold text-slate-900">¿Mide el ticket promedio de compra o
                                 la afluencia de clientes?</label>
                             <select id="metrics-tracking"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none">
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none" required>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. No mide nada, solo ve el total al cerrar la caja al final del día</option>
                                 <option value="1">No mide nada, solo ve el total al cerrar la caja al final del día
                                 </option>
                                 <option value="2">Sabe cuáles son sus 2 productos más vendidos pero sin cifra exacta
@@ -1327,8 +1337,10 @@
             ]);
 
             const csvContent = "data:text/csv;charset=utf-8,\uFEFF" +
-                headers.join(",") + "\\n" +
-                rows.map(e => e.join(",")).join("\\n");
+                headers.join(",") + "\
+" +
+                rows.map(e => e.join(",")).join("\
+");
 
             const encodedUri = encodeURI(csvContent);
             const link = document.createElement("a");
@@ -1460,46 +1472,6 @@
                 'Artesanías y Recuerdos': 0,
                 'Textil y Vestimenta': 0,
                 'Servicios Turísticos y Guianza': 0,
-                'Comercio General y Abarrotes': 0,
-                'Otros': 0
-            };
-
-            records.forEach(r => {
-                if (sectorsMap[r.sector] !== undefined) {
-                    sectorsMap[r.sector]++;
-                } else {
-                    sectorsMap['Otros']++;
-                }
-            });
-
-            barChartInstance.data.datasets[0].data = Object.values(sectorsMap);
-            barChartInstance.update();
-        }
-
-        // Export Data to CSV file
-        function exportToCSV() {
-            if (records.length === 0) {
-                alert('No hay datos disponibles para exportar.');
-                return;
-            }
-
-            let csvContent = "data:text/csv;charset=utf-8,";
-            csvContent += "ID,Negocio,Propietario,Sector,Ubicacion,Telefono,Puntaje_Total,Fecha\n";
-
-            records.forEach(r => {
-                const row = `"${r.id}","${r.businessName}","${r.ownerName}","${r.sector}","${r.locationZone}","${r.phone}",${r.totalScore},"${r.date}"`;
-                csvContent += row + "\n";
-            });
-
-            const encodedUri = encodeURI(csvContent);
-            const link = document.createElement("a");
-            link.setAttribute("href", encodedUri);
-            link.setAttribute("download", "Linea_Base_Emprendedores_Mitad_del_Mundo.csv");
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-        // Manejar el Splash Screen y animación de entrada
         window.addEventListener('load', () => {
             const splash = document.getElementById('splash-screen');
             const mobileNav = document.getElementById('mobile-nav-bar');
