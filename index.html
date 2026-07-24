@@ -1533,13 +1533,20 @@
                 if (sectorsMap[r.sector] !== undefined) {
                     sectorsMap[r.sector]++;
                 } else {
-                    const link = document.createElement("a");
-                    link.setAttribute("href", encodedUri);
-                    link.setAttribute("download", "Linea_Base_Emprendedores_Mitad_del_Mundo.csv");
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
+                    sectorsMap['Otros']++;
                 }
+            });
+
+            barChartInstance.data.datasets[0].data = [
+                sectorsMap['Gastronomía y Alimentación'],
+                sectorsMap['Artesanías y Recuerdos'],
+                sectorsMap['Textil y Vestimenta'],
+                sectorsMap['Servicios Turísticos y Guianza'],
+                sectorsMap['Comercio General y Abarrotes'],
+                sectorsMap['Otros']
+            ];
+            barChartInstance.update();
+        }
                 // Manejar el Splash Screen y animación de entrada
                 window.addEventListener('load', () => {
                     const splash = document.getElementById('splash-screen');
