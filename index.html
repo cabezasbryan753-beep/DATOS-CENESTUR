@@ -233,6 +233,19 @@
                                 Generales</span>
                         </div>
                     </div>
+
+                    <!-- Navigation Dropdown for all sections -->
+                    <div class="relative">
+                        <select id="step-navigator-select" onchange="goToStep(parseInt(this.value))"
+                            class="appearance-none bg-slate-50 border border-slate-200 text-slate-700 py-2.5 pl-3 pr-8 sm:pl-4 sm:pr-10 rounded-xl font-bold text-[11px] sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 cursor-pointer shadow-sm hover:border-amber-300 transition-colors">
+                            <option value="1">1. Datos Generales</option>
+                            <option value="2">2. Diag. Operativo</option>
+                            <option value="3">3. Diag. Comercial</option>
+                            <option value="4">4. Ficha 15 Variables</option>
+                        </select>
+                        <i
+                            class="fa-solid fa-chevron-down absolute right-3 sm:right-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-[10px] sm:text-xs pointer-events-none"></i>
+                    </div>
                 </div>
                 <!-- Progress bar -->
                 <div class="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden">
@@ -700,14 +713,24 @@
         <section id="tab-dashboard" class="hidden space-y-6">
             <div
                 class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-5 sm:p-8 rounded-3xl shadow-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-5 relative overflow-hidden">
-                <div class="absolute -top-12 -right-12 w-40 h-40 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="absolute -bottom-12 -left-12 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
-                
+                <div
+                    class="absolute -top-12 -right-12 w-40 h-40 bg-amber-500/20 rounded-full blur-3xl pointer-events-none">
+                </div>
+                <div
+                    class="absolute -bottom-12 -left-12 w-40 h-40 bg-blue-500/20 rounded-full blur-3xl pointer-events-none">
+                </div>
+
                 <div class="relative z-10 w-full md:w-auto">
-                    <span class="text-amber-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-amber-400/10 px-2.5 py-1 rounded-lg border border-amber-400/20">Informe de Diagnóstico</span>
-                    <h2 class="text-xl sm:text-2xl md:text-3xl font-black mt-3 sm:mt-4 leading-tight tracking-tight">Línea Base Cuantitativa<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Emprendedores de Mitad del Mundo</span></h2>
+                    <span
+                        class="text-amber-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-amber-400/10 px-2.5 py-1 rounded-lg border border-amber-400/20">Informe
+                        de Diagnóstico</span>
+                    <h2 class="text-xl sm:text-2xl md:text-3xl font-black mt-3 sm:mt-4 leading-tight tracking-tight">
+                        Línea Base Cuantitativa<br /><span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">Emprendedores
+                            de Mitad del Mundo</span></h2>
                     <p class="text-slate-300 text-xs sm:text-sm mt-3 max-w-xl leading-relaxed opacity-90">
-                        Evaluación general basada en las 15 variables estandarizadas. Identifica brechas prioritarias para proyectos de asistencia técnica, capacitación y capital de trabajo.
+                        Evaluación general basada en las 15 variables estandarizadas. Identifica brechas prioritarias
+                        para proyectos de asistencia técnica, capacitación y capital de trabajo.
                     </p>
                 </div>
                 <button onclick="exportToCSV()"
@@ -721,8 +744,10 @@
                 <div
                     class="bg-white p-4 sm:p-5 rounded-3xl border border-slate-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.05)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 transition-all hover:shadow-lg hover:-translate-y-1">
                     <div class="order-2 sm:order-1">
-                        <p class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider">Muestra Encuestada</p>
-                        <p id="stat-total" class="text-2xl sm:text-3xl font-black text-slate-800 mt-0.5 tracking-tight">0</p>
+                        <p class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider">Muestra
+                            Encuestada</p>
+                        <p id="stat-total" class="text-2xl sm:text-3xl font-black text-slate-800 mt-0.5 tracking-tight">
+                            0</p>
                     </div>
                     <div
                         class="order-1 sm:order-2 w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 text-blue-600 flex items-center justify-center font-bold text-base sm:text-xl shadow-inner">
@@ -733,8 +758,11 @@
                 <div
                     class="bg-white p-4 sm:p-5 rounded-3xl border border-slate-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.05)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 transition-all hover:shadow-lg hover:-translate-y-1">
                     <div class="order-2 sm:order-1">
-                        <p class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider">Promedio Madurez</p>
-                        <p id="stat-avg-score" class="text-2xl sm:text-3xl font-black text-amber-500 mt-0.5 tracking-tight">0 <span class="text-sm font-semibold text-slate-300">/ 75</span></p>
+                        <p class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider">Promedio
+                            Madurez</p>
+                        <p id="stat-avg-score"
+                            class="text-2xl sm:text-3xl font-black text-amber-500 mt-0.5 tracking-tight">0 <span
+                                class="text-sm font-semibold text-slate-300">/ 75</span></p>
                     </div>
                     <div
                         class="order-1 sm:order-2 w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 text-amber-500 flex items-center justify-center font-bold text-base sm:text-xl shadow-inner">
@@ -745,8 +773,10 @@
                 <div
                     class="bg-white p-4 sm:p-5 rounded-3xl border border-slate-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.05)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 transition-all hover:shadow-lg hover:-translate-y-1">
                     <div class="order-2 sm:order-1">
-                        <p class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider">Brecha Digital</p>
-                        <p id="stat-digital-gap" class="text-2xl sm:text-3xl font-black text-rose-500 mt-0.5 tracking-tight">0%</p>
+                        <p class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider">Brecha
+                            Digital</p>
+                        <p id="stat-digital-gap"
+                            class="text-2xl sm:text-3xl font-black text-rose-500 mt-0.5 tracking-tight">0%</p>
                     </div>
                     <div
                         class="order-1 sm:order-2 w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-rose-50 to-rose-100 text-rose-500 flex items-center justify-center font-bold text-base sm:text-xl shadow-inner">
@@ -757,8 +787,10 @@
                 <div
                     class="bg-white p-4 sm:p-5 rounded-3xl border border-slate-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.05)] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 transition-all hover:shadow-lg hover:-translate-y-1">
                     <div class="order-2 sm:order-1">
-                        <p class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider">% Consolidados</p>
-                        <p id="stat-consolidated" class="text-2xl sm:text-3xl font-black text-emerald-500 mt-0.5 tracking-tight">0%</p>
+                        <p class="text-[9px] sm:text-[10px] font-bold text-slate-400 uppercase tracking-wider">%
+                            Consolidados</p>
+                        <p id="stat-consolidated"
+                            class="text-2xl sm:text-3xl font-black text-emerald-500 mt-0.5 tracking-tight">0%</p>
                     </div>
                     <div
                         class="order-1 sm:order-2 w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 text-emerald-500 flex items-center justify-center font-bold text-base sm:text-xl shadow-inner">
@@ -770,10 +802,13 @@
             <!-- Analytics Charts -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
                 <!-- Radar Chart for 15 Variables -->
-                <div class="bg-white p-4 sm:p-6 rounded-3xl border border-slate-100 shadow-[0_2px_20px_-5px_rgba(0,0,0,0.05)]">
+                <div
+                    class="bg-white p-4 sm:p-6 rounded-3xl border border-slate-100 shadow-[0_2px_20px_-5px_rgba(0,0,0,0.05)]">
                     <div class="flex items-center justify-between mb-2">
                         <h3 class="text-xs sm:text-sm font-bold text-slate-800 flex items-center gap-2.5">
-                            <span class="w-8 h-8 rounded-full bg-indigo-50 text-indigo-500 flex items-center justify-center"><i class="fa-solid fa-spider"></i></span>
+                            <span
+                                class="w-8 h-8 rounded-full bg-indigo-50 text-indigo-500 flex items-center justify-center"><i
+                                    class="fa-solid fa-spider"></i></span>
                             Desempeño Promedio
                         </h3>
                     </div>
@@ -784,10 +819,13 @@
                 </div>
 
                 <!-- Bar Chart by Sector -->
-                <div class="bg-white p-4 sm:p-6 rounded-3xl border border-slate-100 shadow-[0_2px_20px_-5px_rgba(0,0,0,0.05)]">
+                <div
+                    class="bg-white p-4 sm:p-6 rounded-3xl border border-slate-100 shadow-[0_2px_20px_-5px_rgba(0,0,0,0.05)]">
                     <div class="flex items-center justify-between mb-2">
                         <h3 class="text-xs sm:text-sm font-bold text-slate-800 flex items-center gap-2.5">
-                            <span class="w-8 h-8 rounded-full bg-cyan-50 text-cyan-500 flex items-center justify-center"><i class="fa-solid fa-chart-column"></i></span>
+                            <span
+                                class="w-8 h-8 rounded-full bg-cyan-50 text-cyan-500 flex items-center justify-center"><i
+                                    class="fa-solid fa-chart-column"></i></span>
                             Distribución Sectorial
                         </h3>
                     </div>
@@ -799,50 +837,71 @@
             </div>
 
             <!-- Priority Recommendations Matrix -->
-            <div class="bg-white p-5 sm:p-6 rounded-3xl border border-slate-100 shadow-[0_2px_20px_-5px_rgba(0,0,0,0.05)] space-y-5">
+            <div
+                class="bg-white p-5 sm:p-6 rounded-3xl border border-slate-100 shadow-[0_2px_20px_-5px_rgba(0,0,0,0.05)] space-y-5">
                 <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                     <h3 class="text-sm sm:text-base font-bold text-slate-800 flex items-center gap-2.5">
-                        <span class="w-9 h-9 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-lg"><i class="fa-solid fa-lightbulb"></i></span>
+                        <span
+                            class="w-9 h-9 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-lg"><i
+                                class="fa-solid fa-lightbulb"></i></span>
                         Plan de Acción Recomendado
                     </h3>
-                    <span class="text-[10px] font-semibold bg-slate-100 text-slate-500 px-2.5 py-1 rounded-lg whitespace-nowrap border border-slate-200">Basado en territorio</span>
+                    <span
+                        class="text-[10px] font-semibold bg-slate-100 text-slate-500 px-2.5 py-1 rounded-lg whitespace-nowrap border border-slate-200">Basado
+                        en territorio</span>
                 </div>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-5 text-xs">
-                    <div class="bg-gradient-to-b from-rose-50 to-white border border-rose-100 hover:border-rose-300 p-4 sm:p-5 rounded-2xl space-y-2.5 transition-colors shadow-sm">
+                    <div
+                        class="bg-gradient-to-b from-rose-50 to-white border border-rose-100 hover:border-rose-300 p-4 sm:p-5 rounded-2xl space-y-2.5 transition-colors shadow-sm">
                         <div class="font-bold text-rose-900 flex items-center justify-between">
                             <div class="flex items-center gap-2">
-                                <span class="relative flex h-3 w-3"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span><span class="relative inline-flex rounded-full h-3 w-3 bg-rose-600"></span></span>
+                                <span class="relative flex h-3 w-3"><span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span><span
+                                        class="relative inline-flex rounded-full h-3 w-3 bg-rose-600"></span></span>
                                 Nivel Crítico
                             </div>
-                            <span class="text-[10px] font-black bg-rose-100 px-1.5 py-0.5 rounded-md text-rose-700 tracking-tight">&lt; 40 pts</span>
+                            <span
+                                class="text-[10px] font-black bg-rose-100 px-1.5 py-0.5 rounded-md text-rose-700 tracking-tight">&lt;
+                                40 pts</span>
                         </div>
                         <p class="text-slate-600 leading-relaxed text-[11px] sm:text-xs">
-                            Capacitación urgente en separación de finanzas personales vs. del negocio, estructuración de recetas/costos y registro diario en bitácora.
+                            Capacitación urgente en separación de finanzas personales vs. del negocio, estructuración de
+                            recetas/costos y registro diario en bitácora.
                         </p>
                     </div>
 
-                    <div class="bg-gradient-to-b from-amber-50 to-white border border-amber-100 hover:border-amber-300 p-4 sm:p-5 rounded-2xl space-y-2.5 transition-colors shadow-sm">
+                    <div
+                        class="bg-gradient-to-b from-amber-50 to-white border border-amber-100 hover:border-amber-300 p-4 sm:p-5 rounded-2xl space-y-2.5 transition-colors shadow-sm">
                         <div class="font-bold text-amber-900 flex items-center justify-between">
                             <div class="flex items-center gap-2">
                                 <span class="w-3 h-3 rounded-full bg-amber-500"></span> En Desarrollo
                             </div>
-                            <span class="text-[10px] font-black bg-amber-100 px-1.5 py-0.5 rounded-md text-amber-800 tracking-tight">40 - 60 pts</span>
+                            <span
+                                class="text-[10px] font-black bg-amber-100 px-1.5 py-0.5 rounded-md text-amber-800 tracking-tight">40
+                                - 60 pts</span>
                         </div>
                         <p class="text-slate-600 leading-relaxed text-[11px] sm:text-xs">
-                            Implementación de catálogo en WhatsApp Business, cobros digitales (Deuna/TPV), y optimización del perfil comercial en Google Maps.
+                            Implementación de catálogo en WhatsApp Business, cobros digitales (Deuna/TPV), y
+                            optimización del perfil comercial en Google Maps.
                         </p>
                     </div>
 
-                    <div class="bg-gradient-to-b from-emerald-50 to-white border border-emerald-100 hover:border-emerald-300 p-4 sm:p-5 rounded-2xl space-y-2.5 transition-colors shadow-sm">
+                    <div
+                        class="bg-gradient-to-b from-emerald-50 to-white border border-emerald-100 hover:border-emerald-300 p-4 sm:p-5 rounded-2xl space-y-2.5 transition-colors shadow-sm">
                         <div class="font-bold text-emerald-900 flex items-center justify-between">
                             <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span> Consolidado
+                                <span
+                                    class="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
+                                Consolidado
                             </div>
-                            <span class="text-[10px] font-black bg-emerald-100 px-1.5 py-0.5 rounded-md text-emerald-800 tracking-tight">&gt; 60 pts</span>
+                            <span
+                                class="text-[10px] font-black bg-emerald-100 px-1.5 py-0.5 rounded-md text-emerald-800 tracking-tight">&gt;
+                                60 pts</span>
                         </div>
                         <p class="text-slate-600 leading-relaxed text-[11px] sm:text-xs">
-                            Vinculación a encadenamientos productivos regionales, marcas comunitarias, formalización tributaria avanzada y acceso a crédito.
+                            Vinculación a encadenamientos productivos regionales, marcas comunitarias, formalización
+                            tributaria avanzada y acceso a crédito.
                         </p>
                     </div>
                 </div>
@@ -857,34 +916,41 @@
         class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-3 sm:p-4">
         <div
             class="bg-white rounded-3xl max-w-2xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto p-5 sm:p-8 shadow-2xl border border-slate-200 space-y-5 sm:space-y-6 relative print:p-0 print:border-none print:shadow-none print:max-h-none print:overflow-visible">
-            
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4">
+
+            <div
+                class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4">
                 <div class="pr-6">
                     <span id="modal-sector"
                         class="text-[10px] sm:text-xs bg-amber-100 text-amber-800 px-3 py-1 rounded-lg font-black uppercase tracking-widest border border-amber-200">Sector</span>
-                    <h2 id="modal-business-name" class="text-2xl sm:text-3xl font-black text-slate-900 mt-2 leading-tight">Nombre Negocio</h2>
-                    <p id="modal-owner-name" class="text-sm font-bold text-slate-500 mt-1 flex items-center gap-1.5"><i class="fa-solid fa-user-circle text-slate-400"></i> -</p>
+                    <h2 id="modal-business-name"
+                        class="text-2xl sm:text-3xl font-black text-slate-900 mt-2 leading-tight">Nombre Negocio</h2>
+                    <p id="modal-owner-name" class="text-sm font-bold text-slate-500 mt-1 flex items-center gap-1.5"><i
+                            class="fa-solid fa-user-circle text-slate-400"></i> -</p>
                 </div>
-                <button onclick="closeModal()" class="absolute sm:relative top-5 right-5 sm:top-0 sm:right-0 bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-700 w-10 h-10 rounded-full flex items-center justify-center font-bold transition-colors">
+                <button onclick="closeModal()"
+                    class="absolute sm:relative top-5 right-5 sm:top-0 sm:right-0 bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-700 w-10 h-10 rounded-full flex items-center justify-center font-bold transition-colors">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
 
             <!-- Score Summary Banner -->
             <div id="modal-badge-container" class="p-5 sm:p-6 rounded-2xl text-center space-y-1.5 border">
-                <p class="text-[10px] sm:text-xs font-black uppercase tracking-widest opacity-80">Estado de Diagnóstico</p>
+                <p class="text-[10px] sm:text-xs font-black uppercase tracking-widest opacity-80">Estado de Diagnóstico
+                </p>
                 <div id="modal-status-text" class="text-2xl sm:text-3xl font-black tracking-tight">EN DESARROLLO</div>
                 <p id="modal-score-val" class="text-sm font-bold opacity-90 pt-1">Puntaje: 45 / 75 pts (60%)</p>
             </div>
 
             <!-- Details grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm border-y border-slate-100 py-5 bg-slate-50 rounded-2xl px-5 border-dashed">
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm border-y border-slate-100 py-5 bg-slate-50 rounded-2xl px-5 border-dashed">
                 <div class="space-y-0.5">
                     <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">Negocio:</span>
                     <span id="modal-grid-business" class="font-black text-slate-800 block text-base">-</span>
                 </div>
                 <div class="space-y-0.5">
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">Propietario:</span>
+                    <span
+                        class="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">Propietario:</span>
                     <span id="modal-grid-owner" class="font-black text-slate-800 block text-base">-</span>
                 </div>
                 <div class="space-y-0.5">
@@ -906,14 +972,17 @@
             </div>
 
             <div class="pt-2">
-                <h4 class="text-xs font-black text-slate-400 uppercase tracking-wider mb-3"><i class="fa-solid fa-bullseye text-amber-500 mr-1"></i> Propuesta de Valor</h4>
+                <h4 class="text-xs font-black text-slate-400 uppercase tracking-wider mb-3"><i
+                        class="fa-solid fa-bullseye text-amber-500 mr-1"></i> Propuesta de Valor</h4>
                 <p id="modal-value-prop"
-                    class="text-sm sm:text-base text-slate-700 bg-white p-4 rounded-2xl italic border-l-4 border-l-amber-400 shadow-[0_2px_10px_-3px_rgba(0,0,0,0.05)] leading-relaxed">"- "</p>
+                    class="text-sm sm:text-base text-slate-700 bg-white p-4 rounded-2xl italic border-l-4 border-l-amber-400 shadow-[0_2px_10px_-3px_rgba(0,0,0,0.05)] leading-relaxed">
+                    "- "</p>
             </div>
 
             <!-- 15 Variables Score Table -->
             <div class="pt-2">
-                <h4 class="text-xs font-black text-slate-400 uppercase tracking-wider mb-3"><i class="fa-solid fa-list-check text-amber-500 mr-1"></i> Desglose de 15 Variables</h4>
+                <h4 class="text-xs font-black text-slate-400 uppercase tracking-wider mb-3"><i
+                        class="fa-solid fa-list-check text-amber-500 mr-1"></i> Desglose de 15 Variables</h4>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs" id="modal-variables-list">
                     <!-- Populated dynamically -->
                 </div>
@@ -921,13 +990,15 @@
 
             <!-- Recommendation Section -->
             <div class="mt-2 border-t border-slate-100 pt-5">
-                <h4 class="text-xs font-black text-slate-400 uppercase tracking-wider mb-3"><i class="fa-solid fa-arrow-trend-up text-amber-500 mr-1"></i> Plan de Mejora Directo</h4>
+                <h4 class="text-xs font-black text-slate-400 uppercase tracking-wider mb-3"><i
+                        class="fa-solid fa-arrow-trend-up text-amber-500 mr-1"></i> Plan de Mejora Directo</h4>
                 <p id="modal-recommendation"
                     class="text-sm font-bold text-slate-800 bg-slate-50 p-4 rounded-2xl border border-slate-200 leading-relaxed shadow-inner">
                 </p>
             </div>
 
-            <div class="flex flex-col-reverse sm:flex-row justify-end gap-3 pt-4 border-t border-slate-100 print:hidden">
+            <div
+                class="flex flex-col-reverse sm:flex-row justify-end gap-3 pt-4 border-t border-slate-100 print:hidden">
                 <button onclick="closeModal()"
                     class="w-full sm:w-auto px-5 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-600 text-sm font-black rounded-2xl transition-colors">Cerrar</button>
                 <button onclick="window.print()"
@@ -1059,7 +1130,7 @@
         function updateVariableScore(varId, val) {
             const scoreBadge = document.getElementById(`score-val-${varId}`);
             scoreBadge.innerText = `${val} pt${val > 1 ? 's' : ''}`;
-            
+
             val = parseInt(val);
             if (val <= 2) {
                 scoreBadge.className = "text-xs sm:text-sm font-black bg-rose-100 text-rose-700 px-3 py-1 rounded-xl shrink-0 shadow-sm border border-rose-200 transition-colors";
@@ -1110,10 +1181,12 @@
             const idxEl = document.getElementById('current-step-idx');
             const titleEl = document.getElementById('current-step-title');
             const progEl = document.getElementById('current-step-progress');
+            const selectEl = document.getElementById('step-navigator-select');
 
             if (numEl) numEl.innerText = stepNum;
             if (idxEl) idxEl.innerText = stepNum;
             if (titleEl) titleEl.innerText = stepTitles[stepNum];
+            if (selectEl) selectEl.value = stepNum;
             if (progEl) progEl.style.width = (stepNum * 25) + '%';
 
             window.scrollTo({ top: 100, behavior: 'smooth' });
@@ -1572,26 +1645,26 @@
             ];
             barChartInstance.update();
         }
-                // Manejar el Splash Screen y animación de entrada
-                window.addEventListener('load', () => {
-                    const splash = document.getElementById('splash-screen');
-                    const mobileNav = document.getElementById('mobile-nav-bar');
+        // Manejar el Splash Screen y animación de entrada
+        window.addEventListener('load', () => {
+            const splash = document.getElementById('splash-screen');
+            const mobileNav = document.getElementById('mobile-nav-bar');
 
-                    setTimeout(() => {
-                        splash.style.opacity = '0';
+            setTimeout(() => {
+                splash.style.opacity = '0';
 
-                        // Mostrar la barra inferior un poco después de que empiece a desvanecerse el splash
-                        setTimeout(() => {
-                            if (mobileNav) {
-                                mobileNav.classList.remove('opacity-0', 'translate-y-24', 'pointer-events-none');
-                            }
-                        }, 300);
+                // Mostrar la barra inferior un poco después de que empiece a desvanecerse el splash
+                setTimeout(() => {
+                    if (mobileNav) {
+                        mobileNav.classList.remove('opacity-0', 'translate-y-24', 'pointer-events-none');
+                    }
+                }, 300);
 
-                        setTimeout(() => {
-                            splash.style.display = 'none';
-                        }, 1000);
-                    }, 1200);
-                });
+                setTimeout(() => {
+                    splash.style.display = 'none';
+                }, 1000);
+            }, 1200);
+        });
     </script>
 </body>
 
