@@ -174,16 +174,20 @@
     </header>
 
     <!-- Mobile Bottom Navigation Bar -->
-    <nav id="mobile-nav-bar" class="md:hidden opacity-0 translate-y-24 pointer-events-none transition-all duration-1000 ease-out fixed bottom-6 left-0 right-0 mx-auto w-[92%] max-w-sm bg-white/90 backdrop-blur-md border border-slate-200 flex justify-around items-center p-2 rounded-3xl shadow-2xl z-50">
-        <button id="nav-form-btn-mobile" onclick="switchTab('form')" class="flex flex-col items-center justify-center w-full py-2 text-amber-700 bg-amber-50 rounded-2xl transition-all shadow-sm">
+    <nav id="mobile-nav-bar"
+        class="md:hidden opacity-0 translate-y-24 pointer-events-none transition-all duration-1000 ease-out fixed bottom-6 left-0 right-0 mx-auto w-[92%] max-w-sm bg-white/90 backdrop-blur-md border border-slate-200 flex justify-around items-center p-2 rounded-3xl shadow-2xl z-50">
+        <button id="nav-form-btn-mobile" onclick="switchTab('form')"
+            class="flex flex-col items-center justify-center w-full py-2 text-amber-700 bg-amber-50 rounded-2xl transition-all shadow-sm">
             <i class="fa-solid fa-clipboard-list text-xl mb-1"></i>
             <span class="text-[10px] font-bold">Ficha</span>
         </button>
-        <button id="nav-records-btn-mobile" onclick="switchTab('records')" class="flex flex-col items-center justify-center w-full py-2 text-slate-400 hover:text-slate-600 rounded-2xl transition-all">
+        <button id="nav-records-btn-mobile" onclick="switchTab('records')"
+            class="flex flex-col items-center justify-center w-full py-2 text-slate-400 hover:text-slate-600 rounded-2xl transition-all">
             <i class="fa-solid fa-address-book text-xl mb-1"></i>
             <span class="text-[10px] font-bold">Registros</span>
         </button>
-        <button id="nav-dashboard-btn-mobile" onclick="switchTab('dashboard')" class="flex flex-col items-center justify-center w-full py-2 text-slate-400 hover:text-slate-600 rounded-2xl transition-all">
+        <button id="nav-dashboard-btn-mobile" onclick="switchTab('dashboard')"
+            class="flex flex-col items-center justify-center w-full py-2 text-slate-400 hover:text-slate-600 rounded-2xl transition-all">
             <i class="fa-solid fa-chart-pie text-xl mb-1"></i>
             <span class="text-[10px] font-bold">Informe</span>
         </button>
@@ -215,19 +219,26 @@
             </div>
 
             <!-- Form Multi-Step Progress Indicator -->
-            <div class="bg-white p-4 sm:p-5 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-200 mb-2">
+            <div
+                class="bg-white p-4 sm:p-5 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-200 mb-2">
                 <div class="flex items-center justify-between mb-4">
                     <div class="flex items-center gap-3 sm:gap-4">
-                        <span id="current-step-number" class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-amber-400 to-amber-500 text-slate-900 font-black flex items-center justify-center text-lg shadow-lg shadow-amber-500/30">1</span>
+                        <span id="current-step-number"
+                            class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-amber-400 to-amber-500 text-slate-900 font-black flex items-center justify-center text-lg shadow-lg shadow-amber-500/30">1</span>
                         <div>
-                            <span class="text-[10px] sm:text-xs text-slate-500 font-bold uppercase tracking-widest block mb-0.5">Paso <span id="current-step-idx">1</span> de 4</span>
-                            <span id="current-step-title" class="text-sm sm:text-base font-black text-slate-800">Datos Generales</span>
+                            <span
+                                class="text-[10px] sm:text-xs text-slate-500 font-bold uppercase tracking-widest block mb-0.5">Paso
+                                <span id="current-step-idx">1</span> de 4</span>
+                            <span id="current-step-title" class="text-sm sm:text-base font-black text-slate-800">Datos
+                                Generales</span>
                         </div>
                     </div>
                 </div>
                 <!-- Progress bar -->
                 <div class="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden">
-                    <div id="current-step-progress" class="bg-gradient-to-r from-amber-400 to-amber-500 h-full rounded-full transition-all duration-700 ease-out" style="width: 25%"></div>
+                    <div id="current-step-progress"
+                        class="bg-gradient-to-r from-amber-400 to-amber-500 h-full rounded-full transition-all duration-700 ease-out"
+                        style="width: 25%"></div>
                 </div>
             </div>
 
@@ -239,8 +250,10 @@
                 <div id="step-1" class="space-y-6">
                     <div class="border-b border-slate-200 pb-4 mb-4">
                         <h2 class="text-xl sm:text-lg font-black text-slate-900 leading-tight mb-1"><i
-                                class="fa-solid fa-store text-amber-500 mr-2"></i> Paso 1: Información General del Emprendimiento</h2>
-                        <p class="text-sm sm:text-xs text-slate-500">Ubicación geográfica e identificación básica en la zona de Mitad del Mundo.</p>
+                                class="fa-solid fa-store text-amber-500 mr-2"></i> Paso 1: Información General del
+                            Emprendimiento</h2>
+                        <p class="text-sm sm:text-xs text-slate-500">Ubicación geográfica e identificación básica en la
+                            zona de Mitad del Mundo.</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -310,7 +323,8 @@
                                 Negocio *</label>
                             <select id="years-operating" required
                                 class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none">
-                                <option value="" disabled selected hidden class="text-slate-400">Ej. Menos de 1 año (Idea / Inicio)</option>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. Menos de 1 año
+                                    (Idea / Inicio)</option>
                                 <option value="Menos de 1 año">Menos de 1 año (Idea / Inicio)</option>
                                 <option value="1 a 3 años">1 a 3 años (En Crecimiento)</option>
                                 <option value="3 a 5 años">3 a 5 años (En Consolidación)</option>
@@ -331,21 +345,26 @@
                 <div id="step-2" class="hidden space-y-6">
                     <div class="border-b border-slate-200 pb-4 mb-4">
                         <h2 class="text-xl sm:text-lg font-black text-slate-900 leading-tight mb-1"><i
-                                class="fa-solid fa-gears text-amber-500 mr-2"></i> Paso 2: Diagnóstico de Procesos Administrativos, Costos y Operación</h2>
-                        <p class="text-sm sm:text-xs text-slate-500">Evaluación cualitativa del control interno y financiero del negocio.</p>
+                                class="fa-solid fa-gears text-amber-500 mr-2"></i> Paso 2: Diagnóstico de Procesos
+                            Administrativos, Costos y Operación</h2>
+                        <p class="text-sm sm:text-xs text-slate-500">Evaluación cualitativa del control interno y
+                            financiero del negocio.</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Administrative Processes -->
                         <div class="space-y-4">
-                            <h3 class="font-black text-sm text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
+                            <h3
+                                class="font-black text-sm text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
                                 <i class="fa-solid fa-folder-tree text-amber-500"></i> Procesos Administrativos
                             </h3>
                             <label class="block text-xs font-bold text-slate-900">¿Cómo lleva el registro de sus
                                 ingresos y gastos diarios?</label>
                             <select id="admin-records"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none" required>
-                                <option value="" disabled selected hidden class="text-slate-400">Ej. No lleva ningún registro (solo memoria)</option>
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none"
+                                required>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. No lleva ningún
+                                    registro (solo memoria)</option>
                                 <option value="1">No lleva ningún registro (solo memoria)</option>
                                 <option value="2">Anota de forma informal en libreta/cuaderno</option>
                                 <option value="3">Utiliza hojas de cálculo simples (Excel/Google Sheets)</option>
@@ -355,8 +374,10 @@
                             <label class="block text-xs font-bold text-slate-900 pt-2">Formalización Legal y RUC /
                                 RIMPE:</label>
                             <select id="admin-legal"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none" required>
-                                <option value="" disabled selected hidden class="text-slate-400">Ej. Sin RUC / Informal</option>
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none"
+                                required>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. Sin RUC / Informal
+                                </option>
                                 <option value="1">Sin RUC / Informal</option>
                                 <option value="2">RUC / RIMPE Negocio Popular (En trámite o activo)</option>
                                 <option value="3">RIMPE Emprendedor formalizado</option>
@@ -366,14 +387,17 @@
 
                         <!-- Cost Structure -->
                         <div class="space-y-4">
-                            <h3 class="font-black text-sm text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
+                            <h3
+                                class="font-black text-sm text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
                                 <i class="fa-solid fa-calculator text-amber-500"></i> Estructura de Costos
                             </h3>
                             <label class="block text-xs font-bold text-slate-900">¿Conoce exactamente el costo unitario
                                 de sus productos/servicios?</label>
                             <select id="cost-structure"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none" required>
-                                <option value="" disabled selected hidden class="text-slate-400">Ej. No, calcula a ojo o intuición</option>
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none"
+                                required>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. No, calcula a ojo o
+                                    intuición</option>
                                 <option value="1">No, calcula a ojo o intuición</option>
                                 <option value="2">Sabe el costo del insumo directo, pero ignora mano de obra o servicios
                                 </option>
@@ -386,8 +410,10 @@
                             <label class="block text-xs font-bold text-slate-900 pt-2">Asignación de Sueldo del
                                 Emprendedor:</label>
                             <select id="salary-allocation"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none" required>
-                                <option value="" disabled selected hidden class="text-slate-400">Ej. Toma dinero de la caja según va necesitando para uso personal</option>
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none"
+                                required>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. Toma dinero de la
+                                    caja según va necesitando para uso personal</option>
                                 <option value="1">Toma dinero de la caja según va necesitando para uso personal</option>
                                 <option value="2">Intenta fijarse un valor pero casi nunca lo cumple</option>
                                 <option value="3">Tiene definido un sueldo fijo mensual dentro de los costos</option>
@@ -396,14 +422,17 @@
 
                         <!-- Pricing Strategy -->
                         <div class="space-y-4">
-                            <h3 class="font-black text-sm text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
+                            <h3
+                                class="font-black text-sm text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
                                 <i class="fa-solid fa-tags text-amber-500"></i> Fijación de Precios
                             </h3>
                             <label class="block text-xs font-bold text-slate-900">¿Cómo establece los precios de sus
                                 productos o servicios?</label>
                             <select id="pricing-method"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none" required>
-                                <option value="" disabled selected hidden class="text-slate-400">Ej. Copia exactamente los precios de la competencia vecina</option>
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none"
+                                required>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. Copia exactamente
+                                    los precios de la competencia vecina</option>
                                 <option value="1">Copia exactamente los precios de la competencia vecina</option>
                                 <option value="2">Suma un porcentaje fijo básico al precio del insumo</option>
                                 <option value="3">Calcula costos totales + margen deseado + estudio de mercado local
@@ -415,14 +444,17 @@
 
                         <!-- Operational Control -->
                         <div class="space-y-4">
-                            <h3 class="font-black text-sm text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
+                            <h3
+                                class="font-black text-sm text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
                                 <i class="fa-solid fa-boxes-stacked text-amber-500"></i> Control Operativo e Inventarios
                             </h3>
                             <label class="block text-xs font-bold text-slate-900">¿Cómo maneja la existencia de materia
                                 prima, insumos o stock?</label>
                             <select id="operations-control"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none" required>
-                                <option value="" disabled selected hidden class="text-slate-400">Ej. Compra cuando se termina el stock sobre la marcha</option>
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none"
+                                required>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. Compra cuando se
+                                    termina el stock sobre la marcha</option>
                                 <option value="1">Compra cuando se termina el stock sobre la marcha</option>
                                 <option value="2">Revisa visualmente antes del fin de semana o feriado</option>
                                 <option value="3">Lleva registro de entradas/salidas con stock mínimo programado
@@ -448,14 +480,17 @@
                 <div id="step-3" class="hidden space-y-6">
                     <div class="border-b border-slate-200 pb-4 mb-4">
                         <h2 class="text-xl sm:text-lg font-black text-slate-900 leading-tight mb-1"><i
-                                class="fa-solid fa-bullhorn text-amber-500 mr-2"></i> Paso 3: Diagnóstico Comercial y Presencia en Mercado</h2>
-                        <p class="text-sm sm:text-xs text-slate-500">Evaluación de canales digitales, propuesta de valor y retención de clientes.</p>
+                                class="fa-solid fa-bullhorn text-amber-500 mr-2"></i> Paso 3: Diagnóstico Comercial y
+                            Presencia en Mercado</h2>
+                        <p class="text-sm sm:text-xs text-slate-500">Evaluación de canales digitales, propuesta de valor
+                            y retención de clientes.</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <!-- Active Digital Channels -->
                         <div class="space-y-4">
-                            <h3 class="font-black text-sm text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
+                            <h3
+                                class="font-black text-sm text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
                                 <i class="fa-solid fa-share-nodes text-amber-500"></i> Canales Digitales Activos
                             </h3>
                             <label class="block text-xs font-bold text-slate-900">Seleccione los medios digitales con
@@ -491,7 +526,8 @@
 
                         <!-- Value Proposition -->
                         <div class="space-y-4">
-                            <h3 class="font-black text-sm text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
+                            <h3
+                                class="font-black text-sm text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
                                 <i class="fa-solid fa-gem text-amber-500"></i> Propuesta de Valor Diferenciadora
                             </h3>
                             <label class="block text-xs font-bold text-slate-900">¿Qué hace único a su producto frente a
@@ -503,14 +539,17 @@
 
                         <!-- Customer Segmentation -->
                         <div class="space-y-4">
-                            <h3 class="font-black text-sm text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
+                            <h3
+                                class="font-black text-sm text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
                                 <i class="fa-solid fa-users text-amber-500"></i> Segmentación de Clientes Principal
                             </h3>
                             <label class="block text-xs font-bold text-slate-900">¿Quién es su cliente recurrente
                                 principal?</label>
                             <select id="customer-segment"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none" required>
-                                <option value="" disabled selected hidden class="text-slate-400">Ej. Turista Nacional (Quito /
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none"
+                                required>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. Turista Nacional
+                                    (Quito /
                                     Otras Provincias)</option>
                                 <option value="Turista Nacional (Quito / Otras Provincias)">Turista Nacional (Quito /
                                     Otras Provincias)</option>
@@ -526,14 +565,17 @@
 
                         <!-- Metrics & Sales Tracking -->
                         <div class="space-y-4">
-                            <h3 class="font-black text-sm text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
+                            <h3
+                                class="font-black text-sm text-slate-800 flex items-center gap-2 border-b border-slate-100 pb-2">
                                 <i class="fa-solid fa-chart-line text-amber-500"></i> Métricas Comerciales Disponibles
                             </h3>
                             <label class="block text-xs font-bold text-slate-900">¿Mide el ticket promedio de compra o
                                 la afluencia de clientes?</label>
                             <select id="metrics-tracking"
-                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none" required>
-                                <option value="" disabled selected hidden class="text-slate-400">Ej. No mide nada, solo ve el total al cerrar la caja al final del día</option>
+                                class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl text-base sm:text-sm text-slate-600 focus:bg-white focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all appearance-none"
+                                required>
+                                <option value="" disabled selected hidden class="text-slate-400">Ej. No mide nada, solo
+                                    ve el total al cerrar la caja al final del día</option>
                                 <option value="1">No mide nada, solo ve el total al cerrar la caja al final del día
                                 </option>
                                 <option value="2">Sabe cuáles son sus 2 productos más vendidos pero sin cifra exacta
@@ -559,14 +601,22 @@
 
                 <!-- STEP 4: Evaluador de 15 Variables Cuantificables -->
                 <div id="step-4" class="hidden space-y-6">
-                    <div class="border-b border-slate-200 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div
+                        class="border-b border-slate-200 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div>
-                            <h2 class="text-xl sm:text-lg font-black text-slate-900 leading-tight mb-1"><i class="fa-solid fa-list-check text-amber-500 mr-2"></i> Paso 4: Ficha Estandarizada de 15 Variables Cuantificables</h2>
-                            <p class="text-sm sm:text-xs text-slate-500">Califique de 1 (Deficiente / Inexistente) a 5 (Excelente / Optimizado) cada dimensión.</p>
+                            <h2 class="text-xl sm:text-lg font-black text-slate-900 leading-tight mb-1"><i
+                                    class="fa-solid fa-list-check text-amber-500 mr-2"></i> Paso 4: Ficha Estandarizada
+                                de 15 Variables Cuantificables</h2>
+                            <p class="text-sm sm:text-xs text-slate-500">Califique de 1 (Deficiente / Inexistente) a 5
+                                (Excelente / Optimizado) cada dimensión.</p>
                         </div>
-                        <div class="text-left sm:text-right bg-amber-50 p-4 sm:p-3 rounded-2xl sm:rounded-xl border border-amber-200 flex-shrink-0 shadow-inner">
-                            <span class="text-[11px] text-amber-800 font-bold block uppercase tracking-wider mb-1">Puntaje Total Actual</span>
-                            <span id="live-score" class="text-3xl sm:text-2xl font-black text-amber-500">15 <span class="text-sm font-bold text-amber-500/70">/ 75 pts</span></span>
+                        <div
+                            class="text-left sm:text-right bg-amber-50 p-4 sm:p-3 rounded-2xl sm:rounded-xl border border-amber-200 flex-shrink-0 shadow-inner">
+                            <span
+                                class="text-[11px] text-amber-800 font-bold block uppercase tracking-wider mb-1">Puntaje
+                                Total Actual</span>
+                            <span id="live-score" class="text-3xl sm:text-2xl font-black text-amber-500">15 <span
+                                    class="text-sm font-bold text-amber-500/70">/ 75 pts</span></span>
                         </div>
                     </div>
 
@@ -593,15 +643,17 @@
 
         <!-- TAB 2: DIRECTORIO Y REGISTROS -->
         <section id="tab-records" class="hidden space-y-6">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-5 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-200 mb-6">
+            <div
+                class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-5 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-200 mb-6">
                 <div>
-                    <h2 class="text-xl sm:text-lg font-black text-slate-900 leading-tight mb-1"><i class="fa-solid fa-address-book text-amber-500 mr-2"></i> Directorio de Fichas de Levantamiento</h2>
+                    <h2 class="text-xl sm:text-lg font-black text-slate-900 leading-tight mb-1"><i
+                            class="fa-solid fa-address-book text-amber-500 mr-2"></i> Directorio de Fichas de
+                        Levantamiento</h2>
                     <p class="text-sm sm:text-xs text-slate-500">Emprendimientos encuestados en Mitad del Mundo.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
                     <div class="flex gap-2">
-                        <input type="text" id="search-records" oninput="filterRecords()"
-                            placeholder="Buscar negocio..."
+                        <input type="text" id="search-records" oninput="filterRecords()" placeholder="Buscar negocio..."
                             class="flex-1 min-w-0 px-4 py-2 border border-slate-300 rounded-2xl text-xs sm:text-sm outline-none focus:ring-2 focus:ring-amber-500 bg-slate-50 focus:bg-white transition-colors">
                         <select id="filter-sector" onchange="filterRecords()"
                             class="w-32 sm:w-40 px-3 py-2 border border-slate-300 rounded-2xl text-xs sm:text-sm outline-none bg-slate-50 focus:bg-white transition-colors cursor-pointer">
@@ -632,9 +684,10 @@
             <div id="records-table-body" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 <!-- Populated dynamically -->
             </div>
-            
+
             <!-- Empty State -->
-            <div id="no-records-msg" class="bg-white p-12 text-center text-slate-400 rounded-3xl border border-slate-200 border-dashed hidden shadow-sm">
+            <div id="no-records-msg"
+                class="bg-white p-12 text-center text-slate-400 rounded-3xl border border-slate-200 border-dashed hidden shadow-sm">
                 <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4">
                     <i class="fa-solid fa-folder-open text-2xl text-slate-300"></i>
                 </div>
@@ -1480,58 +1533,34 @@
                 if (sectorsMap[r.sector] !== undefined) {
                     sectorsMap[r.sector]++;
                 } else {
-                    sectorsMap['Otros']++;
+                    const link = document.createElement("a");
+                    link.setAttribute("href", encodedUri);
+                    link.setAttribute("download", "Linea_Base_Emprendedores_Mitad_del_Mundo.csv");
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
                 }
-            });
+                // Manejar el Splash Screen y animación de entrada
+                window.addEventListener('load', () => {
+                    const splash = document.getElementById('splash-screen');
+                    const mobileNav = document.getElementById('mobile-nav-bar');
 
-            barChartInstance.data.datasets[0].data = Object.values(sectorsMap);
-            barChartInstance.update();
-        }
+                    setTimeout(() => {
+                        splash.style.opacity = '0';
 
-        // Export Data to CSV file
-        function exportToCSV() {
-            if (records.length === 0) {
-                alert('No hay datos disponibles para exportar.');
-                return;
-            }
+                        // Mostrar la barra inferior un poco después de que empiece a desvanecerse el splash
+                        setTimeout(() => {
+                            if (mobileNav) {
+                                mobileNav.classList.remove('opacity-0', 'translate-y-24', 'pointer-events-none');
+                            }
+                        }, 300);
 
-            let csvContent = "data:text/csv;charset=utf-8,";
-            csvContent += "ID,Negocio,Propietario,Sector,Ubicacion,Telefono,Puntaje_Total,Fecha\n";
-
-            records.forEach(r => {
-                const row = `"${r.id}","${r.businessName}","${r.ownerName}","${r.sector}","${r.locationZone}","${r.phone}",${r.totalScore},"${r.date}"`;
-                csvContent += row + "\n";
-            });
-
-            const encodedUri = encodeURI(csvContent);
-            const link = document.createElement("a");
-            link.setAttribute("href", encodedUri);
-            link.setAttribute("download", "Linea_Base_Emprendedores_Mitad_del_Mundo.csv");
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
-        // Manejar el Splash Screen y animación de entrada
-        window.addEventListener('load', () => {
-            const splash = document.getElementById('splash-screen');
-            const mobileNav = document.getElementById('mobile-nav-bar');
-            
-            setTimeout(() => {
-                splash.style.opacity = '0';
-                
-                // Mostrar la barra inferior un poco después de que empiece a desvanecerse el splash
-                setTimeout(() => {
-                    if (mobileNav) {
-                        mobileNav.classList.remove('opacity-0', 'translate-y-24', 'pointer-events-none');
-                    }
-                }, 300);
-
-                setTimeout(() => {
-                    splash.style.display = 'none';
-                }, 1000);
-            }, 1200);
-        });
+                        setTimeout(() => {
+                            splash.style.display = 'none';
+                        }, 1000);
+                    }, 1200);
+                });
     </script>
 </body>
+
 </html>
